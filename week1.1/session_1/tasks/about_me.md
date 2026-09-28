@@ -1,3 +1,7 @@
 # About Me
 
 Using the resources linked in examples, have a go at making a quick about you page using Markdown.
+
+*Hello comp1850* 
+** I am Abrar**
+# Computer Science Student
