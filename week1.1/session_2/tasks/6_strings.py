@@ -3,13 +3,13 @@
 
 user_string = input("Enter a string: ")
 
-print(f"\nOriginal String: {user_string}")
-print(f"Modified String 1: {user_string.lower()}")
-print(f"Modified String 2: {user_string.upper()}")
-print(f"Modified String 3: {user_string.strip()}")
-print(f"Modified String 4: {user_string.replace('a', '@')}")
-print(f"Modified String 5: {user_string.capitalize()}")
-print(f"Modified String 6: {user_string[::-1]}")
+print(f"\nOriginal String: {user_string}") #prints the original string
+print(f"Modified String 1: {user_string.lower()}") # it cinverts the string to lower case
+print(f"Modified String 2: {user_string.upper()}") # It converts tye whole string to upper case
+print(f"Modified String 3: {user_string.strip()}") 
+print(f"Modified String 4: {user_string.replace('a', '@')}") # It replaces letter a with @
+print(f"Modified String 5: {user_string.capitalize()}") # capitalizes the first letter only
+print(f"Modified String 6: {user_string[::-1]}")  #writes thye string the opposite way
 print(f"Modified String 7: {user_string.title()}")
 print(f"Modified String 8: {len(user_string)}")
 print(f"Modified String 9: {user_string.find('a')}")
