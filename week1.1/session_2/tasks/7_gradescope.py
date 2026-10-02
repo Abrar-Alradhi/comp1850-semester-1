@@ -4,12 +4,12 @@
 
 # Ask a user to enter two numbers (one per input)
 try:
-    num1 = int(input("enter the first number"))
-    num2 = int(input("enter the second number"))
+    num1 = int(input("Enter the first number: "))
+    num2 = int(input("Enter the second number: "))
 # multiply those numbers together
     total = num1 * num2
 # print out the result
-    print(f"The output of {num1} * {num2} is {total}.")
+    print(f"The answer of {num1} * {num2} is {total}.")
 except:
     print("That is not a number")
 # There is an extra point available for validating that they entered numbers!
