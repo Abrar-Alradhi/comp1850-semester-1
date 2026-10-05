@@ -1,4 +1,7 @@
 # Week 1.2, Session 1: Task 4
+#sets are dynamic and ammutable
+#setA.union(setB)
+#ctrl d to quit
 
 fruit = {"apple", "orange", "tomato"}
 vegetables = {"leek", "tomato", "potato"}
