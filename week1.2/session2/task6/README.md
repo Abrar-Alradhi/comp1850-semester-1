@@ -71,3 +71,4 @@ have the following information written to it:
 
 Ensure that each entry in the log file is timestamped to track when the
 evaluation occurred.
+# case_: here it is equivalent to else.

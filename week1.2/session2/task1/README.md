@@ -15,3 +15,7 @@
    ```
 
 3. Press `Ctrl+D` to exit the interpreter.
+
+
+
+#single equal "=" is an assigment

@@ -22,3 +22,5 @@ print(shopping)
 # Add yoghurt, just after milk
 shopping.insert(1, "yoghurt")
 print(shopping)
+
+print(shopping.count("milk"))
