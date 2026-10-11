@@ -9,12 +9,12 @@ if not grade_input.isdecimal():
 
 grade = int(grade_input)
 
-if 100 < grade < 0:
+if grade < 0 or grade > 100:
     sys.exit("Error:Grade must be an integer between 0 and 100")
 
-if 0 < grade < 39:
+if grade <= 39:
     print(f"{grade} is a Fail")
-elif 40 < grade < 69:
+elif 40 <= grade <= 69:
     print(f"{grade} is a Pass")
 else:
     print(f"{grade} is a Distinction")
