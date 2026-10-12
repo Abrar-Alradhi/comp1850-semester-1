@@ -15,3 +15,12 @@ for c, r in rivers.items():
 
 # create 2 further for loops to iterate: 1. just through the keys, 2. just through the values
 # hint: we looked at built in function for dicts last session
+for city in rivers.keys():
+  print(city)
+#even if i didn;t write .keys , by default it will print the keys
+# example
+for city in rivers:
+  print(city)
+  # for printing the values
+for river in rivers.values():
+  print(river)
