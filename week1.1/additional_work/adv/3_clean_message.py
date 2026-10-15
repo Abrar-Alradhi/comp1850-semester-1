@@ -6,6 +6,12 @@
 """
 
 raw_message = input("Type a message to tidy: ")
+raw_message.strip()
+print(raw_message.strip())
+print(raw_message.title())
+
+print(raw_message.lower())
+print(raw_message.upper())
 
 # TODO: apply a sequence of string methods to produce a cleaned_message
 # Example methods: strip, title, replace, lower, upper

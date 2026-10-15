@@ -2,7 +2,7 @@
 
 # Open 'student_data.csv' to read each student's grades
 # hint: skip the header row with data[1:]
-
+with open("student_data.csv", "w")
 
 # Read each student's grades and calculate their average grade
 # hint: CSV data comes as strings, convert grade columns to int() for maths

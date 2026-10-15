@@ -15,3 +15,6 @@ print(newval)
 
 # write the list comprehension equivalent to the `for` loop
 
+
+values = [1,4,2,6,3,7]
+[]

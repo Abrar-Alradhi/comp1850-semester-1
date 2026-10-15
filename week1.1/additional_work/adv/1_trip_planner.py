@@ -13,16 +13,18 @@ time_hours_input = input("How many hours will the journey take? ")
 try:
     distance_miles = int(distance_miles_input)
     time_hours = int(time_hours_input)
+    if (distance_miles <= 0) or (time_hours <= 0):
+        print("please enter a valid number")
+    else:
+        distance_miles = int(distance_miles_input)
+        time_hours = int (time_hours_input)
+        speed = distance_miles / time_hours
+        print(f"You are going to {destination} with a speed of {speed:.2f} miles/hour")
 except:
-    print("enter numbers only")
+    print("Please enter numbers only")
 
-if (distance_miles <= 0) and (time_hours <= 0):
-    print("please enter a valid number") 
-else:
-    distance_miles = int(distance_miles_input)
-    time_hours = int (time_hours_input)
-    speed = distance_miles / time_hours
-    print(f"You are going to {destination} with a speed of {speed:.2f} miles/hour")
+
+
 
 # TODO: convert distance_miles_input and time_hours_input to numbers
 # TODO: calculate the average speed in miles per hour

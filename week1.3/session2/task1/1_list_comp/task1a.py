@@ -9,3 +9,11 @@ print(not_fish)
 
 # write the equivalent for loop to create the not_fish list from animals
 # print your result to verify it is the same
+still_not_fish = []
+animals = ['dog','cat','hamster','goldfish']
+
+for animal in animals:
+    if animal != 'goldfish':
+        still_not_fish.append(animal)
+
+print(still_not_fish)
