@@ -9,3 +9,6 @@
 #  - Displays the area of the circle
 #  - Displays the perimeter of the circle
 import geometry
+c = geometry.Circle(4.5)
+print(c.radius)
+print(c.area)
