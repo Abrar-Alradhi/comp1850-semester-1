@@ -38,9 +38,3 @@ class Rectangle:
         Calculates the perimeter of the rectangle and returns the result.
         """
         return (2 * self.width) + (2 * self.height)
-
-r= Rectangle(2, 2)
-print(r.width, r.height)
-print(r.area())
-print(r.perimeter())
-print(r.is_square())
