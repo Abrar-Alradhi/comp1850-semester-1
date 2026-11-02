@@ -33,6 +33,15 @@ class QuakeDataset:
 
         The new data replaces any existing data.
         """
+        self.data.clear()
+        for info in self.feed.reader():
+            time = datetime.fromisoformat(info['time'])
+            lon = float(info['longitude'])
+            lat = float(info['latitude'])
+            depth = float(info['depth'])
+            mag = float(info['mag'])
+            self.data.append(Quake(time, lon, lat, depth,mag))
+
         # Write code here to replace existing data with new earthquake data.
         # Use the value returned by the feed's reader() method as the
         # subject of a for loop.
@@ -46,12 +55,13 @@ class QuakeDataset:
         """
         Returns the size of this dataset.
         """
-        # Write code here that returns the number of quakes downloaded
+        return len(self.data) # Write code here that returns the number of quakes downloaded
 
     def __str__(self):
         """
         Returns information on this dataset as a string.
         """
+        return f" num. of earthuakes: {self.dat}, level: {self.level},  period: {self.period}" 
         # Write code here to create and return a string representation
         # (Include number of quakes and details of the feed that was used)
 
@@ -69,6 +79,11 @@ class QuakeDataset:
         """
         Returns the mean magnitude of the quakes in this dataset.
         """
+         if len(self.data) == 0:
+            raise QuakeDatasetError("dataset is empty")
+
+        total = sum(quake.magnitude for quake in self.data)
+        return total / len(self.data) 
         # Write code here that computes the mean magnitude of all the
         # quakes currently in the dataset
 
@@ -89,5 +104,13 @@ class QuakeDataset:
         """
         Returns details of the strongest quake in this dataset.
         """
+        if len(self.data) == 0:
+            raise QuakeDatasetError("dataset is empty")
+
+        shallowest = self.data[0]
+        for quake in self.data[1:]:
+            if quake.magnitude > shallowest.magnitude:
+                shallowest = quake
+        return shallowest
         # Write code here that finds and returns the strongest quake
         # (i.e., the one with the largest magnitude)
