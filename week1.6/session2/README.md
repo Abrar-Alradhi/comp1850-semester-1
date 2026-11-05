@@ -9,3 +9,5 @@ experiment with the `Image` class.
 The `projects` directory contains various subdirectories, each containing
 suggestions for projects you can work on during the session. Please see
 the README.md files in those subdirectories for further details.
+for i in range(img.width* img.height):
+    img[i]
