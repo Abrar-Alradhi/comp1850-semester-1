@@ -57,12 +57,6 @@ class Image:
         self.max_value = maximum
         self.pixels = [[value] * width for _ in range(height)]
 
-# get
-return self.pixels[row][col]
-
-# set
-self.pixels[row][col] = value
-
     def read_pgm(self, filename):
         """
         Reads data from the specified PGM image file into this Image.
@@ -94,13 +88,18 @@ self.pixels[row][col] = value
         self.max_value = int(line)
 
     def _parse_pixels(self, imgfile):
-        self.pixels = [int(value) for value in imgfile.read().split()]
+        values = [int(value) for value in imgfile.read().split()]
 
-        if len(self.pixels) != self.width * self.height:
+        if len(values) != self.width * self.height:
             raise ImageError("number of pixels doesn't match image dimensions")
 
-        if any(p < 0 or p > self.max_value for p in self.pixels):
+        if any(p < 0 or p > self.max_value for p in values):
             raise ImageError(f"pixel value outside allowed range (0 to {self.max_value})")
+
+        self.pixels = [
+            values[start:start + self.width]
+            for start in range(0, len(values), self.width)
+        ]
 
     def get(self, row, col):
         """
@@ -112,7 +111,7 @@ self.pixels[row][col] = value
         """
         Sets pixel at the specified row & column coordinates to the given value.
         """
-        self.pixels [row][col] = value
+        self.pixels[row][col] = value
 
     def copy(self):
         """
@@ -134,8 +133,28 @@ self.pixels[row][col] = value
         print(self.max_value, file=imgfile)
 
     def _write_pixels(self, imgfile):
-        for row in range(self.height):
-            start = row * self.width
-            for value in self.pixels[start:start + self.width]:
+        for row in self.pixels:
+            for value in row:
                 print(f"{value:4d}", end="", file=imgfile)
             print(file=imgfile)
+
+test_img = Image.create(5, 5, value=5)
+print(f"Image created successfully! Width: {test_img.width}, Height: {test_img.height}")
+
+# (Assuming your list-of-lists structure: row 2, col 3 gets set to 15)
+test_img.pixels[2][3] = 15
+print(f"Modified pixel at (2, 3) to value: {test_img.pixels[2][3]}")
+
+output_filename = "test_output.pgm"
+
+with open(output_filename, "w") as f:
+    f.write("P2\n")
+    f.write(f"{test_img.width} {test_img.height}\n")
+    f.write(f"{test_img.max_value}\n")
+    
+    
+    test_img._write_pixels(f)
+
+print(f"Successfully generated and saved file: {output_filename}")
+
+read_img = Image()

@@ -69,3 +69,5 @@ If you implement the class, give it these three methods:
   the result as a new image
 
 - An `apply_in_place()` method that modifies the given image using the LUT
+
+Import image from Image()
