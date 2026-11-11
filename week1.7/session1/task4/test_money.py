@@ -31,15 +31,21 @@ def test_invalid_type_pence():
     # invalid type for pence
     
 
-def test_invalid_value_pence():
+def test_pence_negative():
     with pytest.raises(ValueError) as excinfo:
         Money(1, -1)
-    assert str(excinfo.value) == "pence must be >= 0"
+    assert str(excinfo.value) == "pence must be in range 0-99"
     # complete the test implementation for 
     # invalid value for pence
-    
+def test_pence_over():
+    with pytest.raises(ValueError) as excinfo:
+        Money(1, 102)
+    assert str(excinfo.value) == "pence must be in range 0-99"   
 
 def test_valid_add():
+    m1 = Money(1, 99)
+    m2 = Money(0, 8)
+    assert str(m1 + m2) == "£2.07"
     # complete the test implementation for
     # valid add between money objects
     # Hint: you can compare using the __str()__ (
