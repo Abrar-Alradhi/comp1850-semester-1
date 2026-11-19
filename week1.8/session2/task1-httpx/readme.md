@@ -17,7 +17,7 @@ See slide on `Installing httpx CLI`
 
 We can fetch data for a single post from the API with
 
-`httpx https://httpbin.io/json​`
+httpx http://httpbin.io/json​
 
 Note the reply and identify:
 - HTTP status code

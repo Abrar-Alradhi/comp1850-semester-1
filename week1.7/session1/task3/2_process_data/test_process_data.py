@@ -11,12 +11,18 @@ from process_data import process_data
 
 
 def test_empty_list():
+    """
+    Tests an empty list
+    """
     assert process_data("") == None
      # complete the implementation for
     # testing an empty list
     
     
 def test_one_int_list():
+    """
+    test a list with one integer
+    """
     assert process_data([2]) == 2
     assert process_data([-2]) == -2
     # complete the implementation for 
@@ -24,11 +30,14 @@ def test_one_int_list():
 
 
 def test_multiple_int_list():
+        test a list with multiple integers
+        """
     assert process_data([2,3]) == 5
     assert process_data([2,-3]) == -1
     assert process_data([-2,-3]) == -5
     # complete the implementation for
     # testing a list with multiple integers
-
+    
+#Add a docstring for every func and methnod
     
     

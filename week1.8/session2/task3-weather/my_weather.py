@@ -2,8 +2,9 @@
 import httpx
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
 
-api_key="U6KXJTZC2E8VGH39PD7UMG4BZ"   # your API key
+api_key="SKLESXG5LTRE2B8ASD73C354Q"   # your API key
 
 city="Leeds"     # city location
 country="UK"     # country location
@@ -22,6 +23,8 @@ response = httpx.get(url)
 # status code (should be checked)
 print(response.status_code)
 
+if response.is_error:
+    sys.exit(f"API error! [response.status_code]")
 # json data
 data = response.json()
 
@@ -36,11 +39,12 @@ print(temp_data)
 # use pandas to convert data to  dataframe
 
 df = pd.DataFrame(temp_data)
-
+## print(df)
 # using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
 
 df.plot()
-
+ply.xlabel('Day')
+ply.ylabel('Temperature (F)')
 plt.show()
 
 # annotate the graph with axis labels

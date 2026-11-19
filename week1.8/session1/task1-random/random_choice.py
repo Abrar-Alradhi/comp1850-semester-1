@@ -7,7 +7,7 @@ with open("names.txt") as infile:
 
 # Ask user to enter a number, then randomly choose that many names
 # from the list, avoiding any duplicate choices
-how_many = int(input("Enter the number ofnames?"))
+how_many = int(input("Enter the number of names?"))
 choices = random.sample(names, how_many)
 for choice in choices:
     print(choice)

@@ -3,6 +3,9 @@
 from geometry import Point, Circle
 
 def test_point_constructor():
+    """
+    test the point x,y
+    """
     p = Point(5, -2)
     assert p.x == 5
     assert p.y == -2

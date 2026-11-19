@@ -36,3 +36,12 @@ Add further code that
 1. Gets the user to input how many names they want to pick
 2. Picks that many names at random, **avoiding any duplicate picks**
 3. Displays the chosen names, one per line
+
+import random
+how_many = int(input("Enter the number of random numbers: "))
+# Generate all numbers first
+numbers = [random.randint(1, 100) for _ in range(how_many)]
+# Add the generated numbers to the file
+with open("random.txt", "w") as outfile:
+    for num in numbers:
+        outfile.write(str(num) + "\n")
