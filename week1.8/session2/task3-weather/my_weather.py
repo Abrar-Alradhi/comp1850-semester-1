@@ -39,12 +39,14 @@ print(temp_data)
 # use pandas to convert data to  dataframe
 
 df = pd.DataFrame(temp_data)
-## print(df)
+print(df)
 # using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
 
 df.plot()
-ply.xlabel('Day')
-ply.ylabel('Temperature (F)')
+plt.savefig('temp.png')
+plt.xlabel('Day')
+plt.ylabel('Temperature (F)')
+
 plt.show()
 
 # annotate the graph with axis labels
